@@ -1,0 +1,9 @@
+Character specific extras
+	- Incubus should taunt with Lilith
+	- Blood clots should taunt with T.Eve
+	- Gello should taunt with T.Lilith
+	- Locusts should taunt with T.Apollyon
+	- Dark Esau should taunt with T.Jacob
+
+Character specific taunts
+	- Needs like, a shitton of sprite art

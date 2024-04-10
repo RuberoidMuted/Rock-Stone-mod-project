@@ -1,0 +1,6 @@
+<sounds root="sfx/">
+	<sound name="ROCK">
+		<sample weight="0.5" path="ROCK1.wav"/>
+		<sample weight="0.5" path="ROCK2.wav"/>
+	</sound>
+</sounds>

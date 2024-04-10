@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Taunts</name>
+    <directory>taunts</directory>
+    <id>2968236498</id>
+    <description>This mod adds pizza tower's taunts to the game! Press T/Left stick to briefly stop and do a pose!
+
+I will keep periodically adding taunts whenever I feel like doing more spritework.
+
+WARNING: DUE TO A LACK OF ITALIAN HERITAGE, THIS WILL NOT PARRY ATTACKS. PROCEED WITH CAUTION.
+
+If you wanna rebind the taunt, you can do so with the Mod Config Menu:
+https://steamcommunity.com/sharedfiles/filedetails/?id=2681875787
+
+If you want me to add a taunt, lemme know in a comment and I'll try and sprite it. If you've made a custom sprite and want it added to the mod, send it to me and I'll add it in</description>
+    <version>1.5</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Tweaks"/>
+    <tag id="Sound Effects"/>
+</metadata>

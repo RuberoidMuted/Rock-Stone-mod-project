@@ -1,0 +1,5 @@
+<sounds root="sfx/">
+	<sound name="Taunt">
+		<sample weight="1" path="taunt.wav" />
+	</sound>
+</sounds>
