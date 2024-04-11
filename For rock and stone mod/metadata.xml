@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
     <name>Rock and stone!</name>
-    <directory>For rock and stone mod</directory>
-    <id>2968236498</id>
+    <directory>for rock and stone mod</directory>
+    <id>3219591259</id>
     <description>Yes, this mod adds that very scream from Deep Rock Galactic! There are 5 variations of the screams that drop out randomly (just like in the game). 
-    Throw out all your energy and just press "v" for "Rock and Stone!".
-    P.S. Most of the code was taken from the mod "Taunts". 
+    Throw out all your energy and just press &quot;v&quot; for &quot;Rock and Stone!&quot;.
+    P.S. Most of the code was taken from the mod &quot;Taunts&quot;. 
     If you liked my mod, you can look at others in my steam account. Have a good run!
     </description>
-    <version>1.2</version>
+    <version>1.3</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Tweaks"/>
