@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-    <name>Taunts</name>
-    <directory>taunts</directory>
+    <name>Rock and stone!</name>
+    <directory>For rock and stone mod</directory>
     <id>2968236498</id>
-    <description>This mod adds pizza tower's taunts to the game! Press T/Left stick to briefly stop and do a pose!
-
-I will keep periodically adding taunts whenever I feel like doing more spritework.
-
-WARNING: DUE TO A LACK OF ITALIAN HERITAGE, THIS WILL NOT PARRY ATTACKS. PROCEED WITH CAUTION.
-
-If you wanna rebind the taunt, you can do so with the Mod Config Menu:
-https://steamcommunity.com/sharedfiles/filedetails/?id=2681875787
-
-If you want me to add a taunt, lemme know in a comment and I'll try and sprite it. If you've made a custom sprite and want it added to the mod, send it to me and I'll add it in</description>
-    <version>1.5</version>
+    <description>Yes, this mod adds that very scream from Deep Rock Galactic! There are 5 variations of the screams that drop out randomly (just like in the game). 
+    Throw out all your energy and just press "v" for "Rock and Stone!".
+    P.S. Most of the code was taken from the mod "Taunts". 
+    If you liked my mod, you can look at others in my steam account. Have a good run!
+    </description>
+    <version>1.2</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Tweaks"/>
