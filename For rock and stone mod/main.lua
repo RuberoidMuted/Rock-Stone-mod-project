@@ -64,15 +64,21 @@ function mod:setupConfigMenu()
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
 		Type = ModConfigMenu.OptionType.NUMBER,
 		CurrentSetting = function()
+			print("zaza1 is")
+			print(settings.volume)
 			return settings.volume
 		end,
 		Minimum = 0,
 		Maximum = 4,
 		Display = function()
+			print("zaza2 is")
+			print(settings.volume)
 		    return "Quality Check: " .. settings.volume
 		end,
 		OnChange = function(currentNum)
-		    settings.volume = currentNum
+		    print("zaza3 is")
+			print(settings.volume)
+			settings.volume = currentNum
 		end,
 		Info = {"The minimum item quality needed for dance to activate"}
 	})
