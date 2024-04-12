@@ -69,14 +69,18 @@ function mod:setupConfigMenu()
 		Minimum = 0,
 		Maximum = 4,
 		Display = function()
+			if settings.volume == nil then
+				settings.volume = 0
+			end
+			print("zazulik123")
+			print(settings.volume)
 		    return settings.volume
 		end,
 		OnChange = function(currentNum)
-		    print("zaza3 is")
-			print(settings.volume)
+			mod:saveConfig()
 			settings.volume = currentNum
 		end,
-		Info = {"The minimum item quality needed for dance to activate"}
+		Info = {"Put a bolt in ur dick"}
 	})
 
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
