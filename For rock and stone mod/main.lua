@@ -71,9 +71,8 @@ function mod:setupConfigMenu()
 		Display = function()
 			return "Set mod volume: " .. settings.volume
 		end,
-		OnChange = function(currentNum)
-		    settings.volume = currentNum
-			mod:saveConfig()
+		OnChange = function(volume)
+		    settings.volume = volume
 		end
 	})
 
