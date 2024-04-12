@@ -69,11 +69,14 @@ function mod:setupConfigMenu()
 		Minimum = 0,
 		Maximum = 4,
 		Display = function()
-			return "Set mod volume: " .. settings.volume
+			value = tonumber(settings.volume)
+			return "Set mod volume: " .. (value == nil and value or 0)
 		end,
 		OnChange = function(volume)
 		    settings.volume = volume
-		end
+		end,
+
+		Info = { "Change the Red Value in the counters text" }
 	})
 
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
