@@ -122,14 +122,13 @@ function mod:setupConfigMenu()
 			if settings.volume == nil then
 				settings.volume = 0
 			end
-		    return "Mod volume: " ..  settings.volume
+		    return "Volume: " ..  settings.volume
 		end,
 
 		OnChange = function(currentNum)
 			settings.volume = currentNum
 			mod:saveConfig()
-		end,
-		Info = {"Put a bolt in ur dick"},
+		end
 	})
 end
 
