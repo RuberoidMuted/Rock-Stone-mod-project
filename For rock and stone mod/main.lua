@@ -21,7 +21,8 @@ local stoneList = {
 
 local settings = {
 	kbBind = Keyboard.KEY_V,
-	ctBind = 10
+	ctBind = 10,
+	volume = 2.5
 }
 
 function mod:saveConfig()
@@ -59,6 +60,23 @@ function mod:setupConfigMenu()
 	ModConfigMenu.AddText(MOD_NAME, "Info", "Don't forget to check out my other mods")
 	
 	ModConfigMenu.AddSpace(MOD_NAME, "Settings")
+
+	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
+	        Type = ModConfigMenu.OptionType.NUMBER,
+	        CurrentSetting = function()
+				return settings.volume
+			end,
+	        Minimum = 0,
+	        Maximum = 4,
+	        Display = function()
+				return "Set mod volume: " .. settings.volume
+	        end,
+	        OnChange = function(currentNum)
+	            settings.volume = currentNum
+	        end,
+	        Info = {"Staw suda gromkost"}
+	})
+
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
 		Type = ModConfigMenu.OptionType.KEYBIND_KEYBOARD,
 		CurrentSetting = function()
@@ -137,7 +155,7 @@ function mod:doStone(player)
 	local sparkSprite = stoneplayer.stonespark:GetSprite()
 	sparkSprite:Play(stoneList[math.random(1, #stoneList)], true)
 	
-	sfx:Play(rockSound, 2.5, 0, false, 1, 0)
+	sfx:Play(rockSound, settings.volume, 0, false, 1, 0)
 	player.Visible = false
 end
 
