@@ -62,19 +62,19 @@ function mod:setupConfigMenu()
 	ModConfigMenu.AddSpace(MOD_NAME, "Settings")
 
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
-	        Type = ModConfigMenu.OptionType.NUMBER,
-	        CurrentSetting = function()
-				return settings.volume
-			end,
-	        Minimum = 0,
-	        Maximum = 4,
-	        Display = function()
-				return "Set mod volume: " .. settings.volume
-	        end,
-	        OnChange = function(currentNum)
-	            settings.volume = currentNum
-	        end,
-	        Info = {"Staw suda gromkost"}
+		Type = ModConfigMenu.OptionType.NUMBER,
+		CurrentSetting = function()
+			return settings.volume
+		end,
+		Minimum = 0,
+		Maximum = 4,
+		Display = function()
+			return "Set mod volume: " .. settings.volume
+		end,
+		OnChange = function(currentNum)
+		    settings.volume = currentNum
+			mod:saveConfig()
+		end
 	})
 
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
