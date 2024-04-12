@@ -72,15 +72,14 @@ function mod:setupConfigMenu()
 			if settings.volume == nil then
 				settings.volume = 0
 			end
-			print("zazulik123")
-			print(settings.volume)
 		    return settings.volume
 		end,
+
 		OnChange = function(currentNum)
-			mod:saveConfig()
 			settings.volume = currentNum
+			mod:saveConfig()
 		end,
-		Info = {"Put a bolt in ur dick"}
+		Info = {"Put a bolt in ur dick"},
 	})
 
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
