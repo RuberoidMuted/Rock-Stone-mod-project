@@ -62,27 +62,6 @@ function mod:setupConfigMenu()
 	ModConfigMenu.AddSpace(MOD_NAME, "Settings")
 
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
-		Type = ModConfigMenu.OptionType.NUMBER,
-		CurrentSetting = function()
-			return settings.volume
-		end,
-		Minimum = 0,
-		Maximum = 4,
-		Display = function()
-			if settings.volume == nil then
-				settings.volume = 0
-			end
-		    return settings.volume
-		end,
-
-		OnChange = function(currentNum)
-			settings.volume = currentNum
-			mod:saveConfig()
-		end,
-		Info = {"Put a bolt in ur dick"},
-	})
-
-	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
 		Type = ModConfigMenu.OptionType.KEYBIND_KEYBOARD,
 		CurrentSetting = function()
 			return settings.kbBind
@@ -131,6 +110,25 @@ function mod:setupConfigMenu()
 			end
 			return "Press a button on your controller to change this setting.$newline$newline" .. keepSettingString .. "Press BACK to go back and clear this setting."				
 		end
+	})
+	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
+		Type = ModConfigMenu.OptionType.NUMBER,
+		CurrentSetting = function()
+			return settings.volume
+		end,
+		Minimum = 0,
+		Maximum = 4,
+		Display = function()
+			if settings.volume == nil then
+				settings.volume = 0
+			end
+		    return settings.volume
+		end,
+
+		OnChange = function(currentNum)
+			settings.volume = currentNum
+		end,
+		Info = {"Put a bolt in ur dick"},
 	})
 end
 
