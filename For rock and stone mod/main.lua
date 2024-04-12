@@ -22,7 +22,7 @@ local stoneList = {
 local settings = {
 	kbBind = Keyboard.KEY_V,
 	ctBind = 10,
-	volume = 1
+	volume = 4
 }
 
 function mod:saveConfig()
@@ -69,13 +69,12 @@ function mod:setupConfigMenu()
 		Minimum = 0,
 		Maximum = 4,
 		Display = function()
-			return "Set mod volume: " .. settings.volume
+		    return "Quality Check: " .. settings.volume
 		end,
-		OnChange = function(volume)
-		    settings.volume = volume
+		OnChange = function(currentNum)
+		    settings.volume = currentNum
 		end,
-
-		Info = { "Change the Red Value in the counters text" }
+		Info = {"The minimum item quality needed for dance to activate"}
 	})
 
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
