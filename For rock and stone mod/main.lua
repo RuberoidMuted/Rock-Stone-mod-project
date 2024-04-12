@@ -22,7 +22,7 @@ local stoneList = {
 local settings = {
 	kbBind = Keyboard.KEY_V,
 	ctBind = 10,
-	volume = 2.5
+	volume = 1
 }
 
 function mod:saveConfig()
@@ -69,8 +69,7 @@ function mod:setupConfigMenu()
 		Minimum = 0,
 		Maximum = 4,
 		Display = function()
-			value = tonumber(settings.volume)
-			return "Set mod volume: " .. (value == nil and value or 0)
+			return "Set mod volume: " .. settings.volume
 		end,
 		OnChange = function(volume)
 		    settings.volume = volume
