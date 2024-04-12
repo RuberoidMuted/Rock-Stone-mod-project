@@ -22,7 +22,7 @@ local stoneList = {
 local settings = {
 	kbBind = Keyboard.KEY_V,
 	ctBind = 10,
-	volume = 4
+	volume = 5
 }
 
 function mod:saveConfig()
@@ -33,14 +33,14 @@ function mod:saveConfig()
 end
 
 function mod:loadConfig()
-	
+
 	if not mod:HasData() then
 		return
 	end
-	
+
 	local jsonString = mod:LoadData()
 	settings = json.decode(jsonString)
-	
+
 end
 
 mod:loadConfig()
@@ -50,15 +50,15 @@ function mod:setupConfigMenu()
 	if ModConfigMenu == nil then
 		return
 	end
-	
+
 	local MOD_NAME = "Rock&Stone"
-	
+
 	ModConfigMenu.AddTitle(MOD_NAME, "Info", "Press the treasured button")
 	ModConfigMenu.AddTitle(MOD_NAME, "Info", "to express all your emotions!")
 	ModConfigMenu.AddTitle(MOD_NAME, "Info", "Rock and stone!")
 	ModConfigMenu.AddText(MOD_NAME, "Info", "Mod made by Ruberoid")
 	ModConfigMenu.AddText(MOD_NAME, "Info", "Don't forget to check out my other mods")
-	
+
 	ModConfigMenu.AddSpace(MOD_NAME, "Settings")
 
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
@@ -73,7 +73,7 @@ function mod:setupConfigMenu()
 			settings.kbBind = button or -1
 			mod:saveConfig()
 		end,
-		
+
 		-- Popup panel
 		PopupGfx = ModConfigMenu.PopupGfx.WIDE_SMALL,
 		PopupWidth = 280,
@@ -84,7 +84,7 @@ function mod:setupConfigMenu()
 				local currentSettingString = InputHelper.KeyboardToString[currentValue]
 				keepSettingString = "This setting is currently set to \"" .. currentSettingString .. "\".$newlinePress this button to keep it unchanged.$newline$newline"
 			end
-			return "Press a button on your keyboard to change this setting.$newline$newline" .. keepSettingString .. "Press ESCAPE to go back and clear this setting."				
+			return "Press a button on your keyboard to change this setting.$newline$newline" .. keepSettingString .. "Press ESCAPE to go back and clear this setting."
 		end
 	})
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
@@ -108,7 +108,7 @@ function mod:setupConfigMenu()
 				local currentSettingString = (InputHelper.ControllerToString[currentValue] or "N/A")
 				keepSettingString = "This setting is currently set to \"" .. currentSettingString .. "\".$newlinePress this button to keep it unchanged.$newline$newline"
 			end
-			return "Press a button on your controller to change this setting.$newline$newline" .. keepSettingString .. "Press BACK to go back and clear this setting."				
+			return "Press a button on your controller to change this setting.$newline$newline" .. keepSettingString .. "Press BACK to go back and clear this setting."
 		end
 	})
 	ModConfigMenu.AddSetting(MOD_NAME, "Settings", {
@@ -117,16 +117,17 @@ function mod:setupConfigMenu()
 			return settings.volume
 		end,
 		Minimum = 0,
-		Maximum = 4,
+		Maximum = 5,
 		Display = function()
 			if settings.volume == nil then
 				settings.volume = 0
 			end
-		    return settings.volume
+		    return "Mod volume: " ..  settings.volume
 		end,
 
 		OnChange = function(currentNum)
 			settings.volume = currentNum
+			mod:saveConfig()
 		end,
 		Info = {"Put a bolt in ur dick"},
 	})
@@ -149,16 +150,16 @@ function mod:doStone(player)
 	stoneplayer.pos = player.Position
 	stoneplayer.stonespark = Isaac.Spawn(1000, rockEffect, 0, player.Position, Vector(0, 0), nil)
 	stoneplayer.rocktimer = rockLockout
-	
+
 	player.Velocity = Vector(0, 0)
-	
+
 	-- TODO: This can be redone by just swapping out the sprites with SPRITEOBJECT:ReplaceSpritesheet()
 	-- Not sure if this would become a disaster for memory but it'd remove the need for the anm2 editor in the workflow
 	-- Sprites would need a consistent size though, which'd become a nightmare if a taunt is too big
 	local sparkSprite = stoneplayer.stonespark:GetSprite()
 	sparkSprite:Play(stoneList[math.random(1, #stoneList)], true)
-	
-	sfx:Play(rockSound, settings.volume, 0, false, 1, 0)
+
+	sfx:Play(rockSound, (settings.volume*4.0)/10, 0, false, 1, 0)
 	player.Visible = false
 end
 
